@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "118556538700",
+    "firebase_url": "https://dspread-mpos.firebaseio.com",
+    "project_id": "dspread-mpos",
+    "storage_bucket": "dspread-mpos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118556538700:android:37fa701ed23ce13592c1e9",
+        "android_client_info": {
+          "package_name": "com.dspread.mpos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "118556538700-dt26qn51o9lfp4qmt882l4q9j4a9f6iu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoD7HAGOl8LjHkxov5STHTnHKWOuccVzE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "118556538700-dt26qn51o9lfp4qmt882l4q9j4a9f6iu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

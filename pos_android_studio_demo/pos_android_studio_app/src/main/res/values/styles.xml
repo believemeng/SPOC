@@ -1,0 +1,79 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <!--<style name="AppBaseTheme" parent="android:Theme.Light">-->
+        <!--&lt;!&ndash;-->
+            <!--Theme customizations available in newer API levels can go in-->
+            <!--res/values-vXX/styles.xml, while customizations related to-->
+            <!--backward-compatibility can go here.-->
+        <!--&ndash;&gt;-->
+    <!--</style>-->
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="BtnTestCommand">
+<!--        <item name="android:layout_weight">1</item>-->
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="LinTestCommand">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="EditTextSignInStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="background">@drawable/edittext_bg_selector</item>
+        <item name="fontFamily">roboto</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/ds_col_11</item>
+        <item name="android:textColorHint">@color/ds_col_6</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!--    <item name="android:background">@drawable/bg_blue_edittext_selector</item>-->
+    <style name="AlertDialogEditTextStyle">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginLeft">24dp</item>
+    <item name="fontFamily">roboto</item>
+    <item name="android:layout_marginRight">24dp</item>
+    <item name="android:layout_marginTop">20dp</item>
+    <item name="android:textColor">@color/ds_col_11</item>
+    <item name="android:textColorHint">@color/ds_col_15</item>
+    </style>
+
+    <style name="ButtonKeyboard">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:background">@drawable/bg_item_keyboard</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!--主题样式-->
+    <style name="dialog_pay_theme" parent="@android:style/Theme.Dialog">
+        <!--边框-->
+        <item name="android:windowFrame">@null</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimAmount">0.4</item><!--弹框背景灰度-->
+    </style>
+
+    <!--动画方式-->
+    <style name="dialogOpenAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_payview_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_payview_out</item>
+    </style>
+
+</resources>

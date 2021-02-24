@@ -1,0 +1,116 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ds_col_7">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <ImageView
+                android:id="@+id/img_user_icon"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="56dp"
+                app:srcCompat="@drawable/logo" />
+
+            <!--showing user name-->
+            <TextView
+                android:id="@+id/txt_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="9dp"
+                android:text="@string/dspread"
+                android:textColor="@color/ds_col_11"
+                android:textSize="14sp" />
+
+            <!--user name-->
+            <com.dspread.demoui.widget.ClearableEditText
+                android:id="@+id/edt_username"
+                style="@style/EditTextSignInStyle"
+                android:layout_marginTop="35dp"
+                android:hint="@string/all_email"
+                android:inputType="textEmailAddress"
+                android:paddingRight="2dp"/>
+
+            <!--password-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/edt_password"
+                    style="@style/EditTextSignInStyle"
+                    android:hint="@string/all_password"
+                    android:inputType="textPassword" />
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/btn_show_password"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/sign_in_eye_selector" />
+            </RelativeLayout>
+
+            <!--sign in button-->
+            <Button
+                android:id="@+id/btn_signin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33dp"
+                android:background="@drawable/login_blue_button"
+                android:stateListAnimator="@null"
+                android:text="@string/sign_in"
+                android:textColor="@color/bg_red"
+                android:textSize="14sp"
+                android:textAllCaps="true"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <!--sign up-->
+                <TextView
+                    android:id="@+id/btn_sign_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/ds_col_15"
+                    android:textSize="14sp" />
+
+                <!--forget password-->
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/btn_forgot_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/forgot_password"
+                    android:textColor="@color/ds_col_15"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

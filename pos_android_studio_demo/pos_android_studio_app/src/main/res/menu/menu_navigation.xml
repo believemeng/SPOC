@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+<!--        <item-->
+<!--            android:id="@+id/single_1"-->
+<!--            android:icon="@drawable/ic_headphones_on"-->
+<!--            android:title="encrypt"-->
+<!--            />-->
+
+<!--        <item-->
+<!--            android:id="@+id/single_2"-->
+<!--            android:icon="@drawable/ic_clear_edit_text"-->
+<!--            android:title="decrypt"/>-->
+        <item
+            android:id="@+id/menu_active_device"
+            android:icon="@drawable/ic_clear_edit_text"
+            android:title="@string/active_device"/>
+    </group>
+
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_connect"
+            android:icon="@drawable/ic_launcher"
+            android:title="@string/connect"/>
+
+        <item
+            android:id="@+id/menu_logout"
+            android:icon="@drawable/ic_launcher"
+            android:title="@string/logout"/>
+    </group>
+
+
+</menu>

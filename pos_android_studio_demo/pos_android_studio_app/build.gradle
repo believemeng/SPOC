@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.google.firebase.firebase-perf'
+
+android {
+    signingConfigs {
+        release {
+            keyAlias 'dspread'
+            keyPassword '111111'
+            storeFile file('dspread.jks')
+            storePassword '111111'
+        }
+    }
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.dspread.mpos"
+        minSdkVersion 17
+        targetSdkVersion 29
+        versionCode 3
+        versionName "1.1.0"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            shrinkResources true
+            zipAlignEnabled true
+            signingConfig signingConfigs.release
+        }
+    }
+    sourceSets.main {
+        jniLibs.srcDir 'libs'
+        jni.srcDirs = []
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+        disable 'MissingTranslation'
+        disable 'ExtraTranslation'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.iqiyi.xcrash:xcrash-android-lib:2.4.6'
+//    implementation 'com.binioter:guideview:1.0.0'
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.0'
+    //swipe refresh
+    implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
+    //gif加载
+//    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+    implementation 'org.jetbrains:annotations-java5:15.0'
+    implementation "com.google.android.gms:play-services-safetynet:17.0.0"
+    implementation 'com.google.android.play:core:1.6.1'
+
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
+    implementation 'com.google.firebase:firebase-crashlytics:17.2.1'
+    implementation 'com.google.firebase:firebase-core:17.0.0'
+    implementation 'com.google.firebase:firebase-perf:19.0.8'
+
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+
+    implementation 'org.apache.commons:commons-lang3:3.6'
+
+}
