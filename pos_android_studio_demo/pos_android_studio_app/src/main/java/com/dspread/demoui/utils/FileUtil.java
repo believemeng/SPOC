@@ -24,7 +24,7 @@ public class FileUtil {
             fout.write(inputBytes);
             fout.close();
         } catch(Exception e){
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
 
