@@ -400,6 +400,7 @@ public class MainActivity extends BaseActivity  {
         }
     }
 
+    //  deepcode ignore HardcodedValue: <comment the reason here>
     public void showDialog(String msg){
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setPositiveButton(R.string.all_ok, new DialogInterface.OnClickListener() {
@@ -1202,6 +1203,7 @@ public class MainActivity extends BaseActivity  {
                     TRACE.w("nfc 8003");
                     try {
                         Thread.sleep(200);
+                        //  deepcode ignore catchingInterruptedExceptionWithoutInterrupt: <comment the reason here>
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

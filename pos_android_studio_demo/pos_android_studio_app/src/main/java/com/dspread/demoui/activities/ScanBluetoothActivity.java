@@ -209,7 +209,7 @@ public class ScanBluetoothActivity extends BaseActivity {
             String batteryPercentage = posInfoData.get("batteryPercentage") == null ? ""
                     : posInfoData.get("batteryPercentage");
             String hardwareVersion = posInfoData.get("hardwareVersion") == null ? "" : posInfoData.get("hardwareVersion");
-            String SUB = posInfoData.get("SUB") == null ? "" : posInfoData.get("SUB");
+//            String SUB = posInfoData.get("SUB") == null ? "" : posInfoData.get("SUB");
             String pciFirmwareVersion = posInfoData.get("PCI_firmwareVersion") == null ? ""
                     : posInfoData.get("PCI_firmwareVersion");
             String pciHardwareVersion = posInfoData.get("PCI_hardwareVersion") == null ? ""
@@ -218,8 +218,8 @@ public class ScanBluetoothActivity extends BaseActivity {
             posInfos.setBootLoaderVersion(bootloaderVersion);
             posInfos.setFirmwareVersion(firmwareVersion);
             posInfos.setHardwareVersion(hardwareVersion);
-            posInfos.setPCIFirmwareVresion(pciFirmwareVersion);
-            posInfos.setPCIHardwareVersion(pciHardwareVersion);
+            posInfos.setPciFirmwareVresion(pciFirmwareVersion);
+            posInfos.setPciHardwareVersion(pciHardwareVersion);
             pos.getQposId();
         }
 
@@ -230,8 +230,7 @@ public class ScanBluetoothActivity extends BaseActivity {
             String csn = posIdTable.get("csn") == null ? "" : posIdTable.get("csn");
             String psamId = posIdTable.get("psamId") == null ? "" : posIdTable
                     .get("psamId");
-            String NFCId = posIdTable.get("nfcID") == null ? "" : posIdTable
-                    .get("nfcID");
+//            String NFCId = posIdTable.get("nfcID") == null ? "" : posIdTable.get("nfcID");
             posInfos.setTerminalId(posId);
             SPInstance.getInstance(ScanBluetoothActivity.this).saveTerminalId(posId);
             verifySCRP(posInfos);

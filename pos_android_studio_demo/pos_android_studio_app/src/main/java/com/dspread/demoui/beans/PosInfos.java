@@ -7,8 +7,8 @@ public class PosInfos implements Serializable {
     private String bootLoaderVersion;
     private String firmwareVersion;
     private String hardwareVersion;
-    private String PCIFirmwareVresion;
-    private String PCIHardwareVersion;
+    private String pciFirmwareVresion;
+    private String pciHardwareVersion;
 
     public String getTerminalId() {
         return terminalId;
@@ -42,19 +42,19 @@ public class PosInfos implements Serializable {
         this.hardwareVersion = hardwareVersion;
     }
 
-    public String getPCIFirmwareVresion() {
-        return PCIFirmwareVresion;
+    public String getPciFirmwareVresion() {
+        return pciFirmwareVresion;
     }
 
-    public void setPCIFirmwareVresion(String PCIFirmwareVresion) {
-        this.PCIFirmwareVresion = PCIFirmwareVresion;
+    public void setPciFirmwareVresion(String pciFirmwareVresion) {
+        this.pciFirmwareVresion = pciFirmwareVresion;
     }
 
-    public String getPCIHardwareVersion() {
-        return PCIHardwareVersion;
+    public String getPciHardwareVersion() {
+        return pciHardwareVersion;
     }
 
-    public void setPCIHardwareVersion(String PCIHardwareVersion) {
-        this.PCIHardwareVersion = PCIHardwareVersion;
+    public void setPciHardwareVersion(String pciHardwareVersion) {
+        this.pciHardwareVersion = pciHardwareVersion;
     }
 }

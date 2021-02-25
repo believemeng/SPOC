@@ -29,14 +29,9 @@ public abstract class HttpResponseListener<T> {
 
     public abstract void onResponse(JSONObject response);
 
-    public void onResponse(ResponseBody responseBody) {
+    public abstract void onResponse(ResponseBody responseBody) ;
 
-    }
+    public abstract void onFailure(Call<ResponseBody> call, Throwable e);
 
-    public void onFailure(Call<ResponseBody> call, Throwable e) {
-    }
-
-    public void onFailure(String msg,int errorCode){
-
-    }
+    public abstract void onFailure(String msg,int errorCode);
 }

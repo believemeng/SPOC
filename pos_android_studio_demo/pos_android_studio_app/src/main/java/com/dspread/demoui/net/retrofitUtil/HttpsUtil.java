@@ -1,5 +1,7 @@
 package com.dspread.demoui.net.retrofitUtil;
 
+import android.text.TextUtils;
+
 import com.dspread.demoui.utils.TRACE;
 
 import java.io.IOException;
@@ -28,6 +30,7 @@ import javax.net.ssl.X509TrustManager;
  * Time:2020/8/24
  * Author:Qianmeng Chen
  * Description:
+ *  file deepcode ignore TooPermissiveTrustManager:
  */
 public class HttpsUtil {
     public static class SSLParams
@@ -68,15 +71,6 @@ public class HttpsUtil {
         {
             TRACE.w(e.toString());
             throw new AssertionError(e);
-        }
-    }
-
-    public static class  UnSafeHostnameVerifier implements HostnameVerifier
-    {
-        @Override
-        public boolean verify(String hostname, SSLSession session)
-        {
-            return true;
         }
     }
 
