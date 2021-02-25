@@ -1206,7 +1206,7 @@ public class MainActivity extends BaseActivity  {
                         Thread.sleep(200);
                         //  deepcode ignore catchingInterruptedExceptionWithoutInterrupt: <comment the reason here>
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        //e.printStackTrace();
                     }
                     String content = "";
                     if (nfcLog == null) {

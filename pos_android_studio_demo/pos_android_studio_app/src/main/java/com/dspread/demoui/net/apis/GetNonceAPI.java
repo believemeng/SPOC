@@ -47,7 +47,7 @@ public final class GetNonceAPI extends RetrofitBaseAPI {
                         callback.onFailure("Get Nonce null",code);
                     }
                 } catch (JSONException e) {
-                    e.printStackTrace();
+//                    e.printStackTrace();
                 }
             }
         });

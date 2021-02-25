@@ -210,7 +210,7 @@ public class CommonUtils {
 		try {
 			packageInfo = pm.getPackageInfo(packageName, PackageManager.GET_SIGNATURES);
 		} catch (PackageManager.NameNotFoundException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return encodedSignatures;
 		}
 		Signature[] signatures = packageInfo.signatures;
@@ -223,7 +223,7 @@ public class CommonUtils {
 				byte[] digest = md.digest();
 				encodedSignatures.add(Base64.encodeToString(digest, Base64.NO_WRAP));
 			} catch (NoSuchAlgorithmException e) {
-				e.printStackTrace();
+				//e.printStackTrace();
 			}
 		}
 		return encodedSignatures;
@@ -247,7 +247,7 @@ public class CommonUtils {
 			while (cis.read(buff) >= 0) ;
 			chksum = chk.getValue();
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 		return chksum;
 	}

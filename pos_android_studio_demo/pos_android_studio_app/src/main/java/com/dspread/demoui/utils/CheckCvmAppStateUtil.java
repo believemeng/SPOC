@@ -102,9 +102,9 @@ public class CheckCvmAppStateUtil {
             String result = hexString.toString();
             return result.substring(0, result.length()-1);
         } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return null;
     }

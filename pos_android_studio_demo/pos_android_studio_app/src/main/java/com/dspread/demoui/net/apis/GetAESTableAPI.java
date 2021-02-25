@@ -48,7 +48,7 @@ public final class GetAESTableAPI extends RetrofitBaseAPI {
                 try {
                     callback.onSuccess(response.bytes());
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });

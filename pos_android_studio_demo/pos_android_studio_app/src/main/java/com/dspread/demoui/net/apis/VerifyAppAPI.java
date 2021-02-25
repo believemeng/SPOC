@@ -39,7 +39,7 @@ public final class VerifyAppAPI extends RetrofitBaseAPI {
             jsonObject.put("appSignature",signature);
             requestUtil.putParamsObj(jsonObject);
         } catch (JSONException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return requestUtil;
     }
@@ -56,7 +56,7 @@ public final class VerifyAppAPI extends RetrofitBaseAPI {
                         callback.onSuccess(false);
                     }
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });

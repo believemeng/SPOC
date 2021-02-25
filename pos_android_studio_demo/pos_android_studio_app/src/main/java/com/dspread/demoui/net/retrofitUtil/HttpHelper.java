@@ -685,7 +685,7 @@ public final class HttpHelper {
                     isTokenExpired = false;
                 }
             } catch (JSONException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
             }
             /***************************************/
 

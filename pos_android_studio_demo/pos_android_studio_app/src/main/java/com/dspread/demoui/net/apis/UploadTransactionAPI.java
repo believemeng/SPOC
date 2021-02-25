@@ -39,7 +39,7 @@ public final class UploadTransactionAPI extends RetrofitBaseAPI {
             params.put("tranTime",transactions.getTranTime());
             requestUtil.putParamsObj(params);
         } catch (JSONException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
 
         return requestUtil;

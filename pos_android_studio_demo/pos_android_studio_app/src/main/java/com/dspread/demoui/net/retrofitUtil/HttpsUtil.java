@@ -132,16 +132,16 @@ public class HttpsUtil {
             return trustManagers;
         } catch (NoSuchAlgorithmException e)
         {
-            e.printStackTrace();
+            //e.printStackTrace();
         } catch (CertificateException e)
         {
-            e.printStackTrace();
+           // e.printStackTrace();
         } catch (KeyStoreException e)
         {
-            e.printStackTrace();
+           // e.printStackTrace();
         } catch (Exception e)
         {
-            e.printStackTrace();
+           // e.printStackTrace();
         }
         return new TrustManager[0];
 
@@ -163,22 +163,22 @@ public class HttpsUtil {
 
         } catch (KeyStoreException e)
         {
-            e.printStackTrace();
+           // e.printStackTrace();
         } catch (NoSuchAlgorithmException e)
         {
-            e.printStackTrace();
+            //e.printStackTrace();
         } catch (UnrecoverableKeyException e)
         {
-            e.printStackTrace();
+            //e.printStackTrace();
         } catch (CertificateException e)
         {
-            e.printStackTrace();
+            //e.printStackTrace();
         } catch (IOException e)
         {
-            e.printStackTrace();
+            //e.printStackTrace();
         } catch (Exception e)
         {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return new KeyManager[0];
     }

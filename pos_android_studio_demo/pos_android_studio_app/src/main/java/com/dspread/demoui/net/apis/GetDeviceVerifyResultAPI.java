@@ -38,7 +38,7 @@ public final class GetDeviceVerifyResultAPI extends RetrofitBaseAPI {
             params.put("jws",jws);
             requestUtil.putParamsObj(params);
         } catch (JSONException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return requestUtil;
     }

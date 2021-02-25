@@ -41,7 +41,7 @@ public final class VerifySCRPAPI extends RetrofitBaseAPI {
             params.put("PCIHardwareVersion",posInfos.getPciHardwareVersion());
             requestUtil.putParamsObj(params);
         } catch (JSONException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return requestUtil;
     }

@@ -49,7 +49,7 @@ public final class GetDevicesVerifyTokenAPI extends RetrofitBaseAPI {
                         callback.onFailure("Active Device Fail!",code);
                     }
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                   // e.printStackTrace();
                 }
             }
         });
