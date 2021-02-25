@@ -16,7 +16,7 @@ import org.json.JSONObject;
  * Author:Qianmeng Chen
  * Description:
  */
-public class GetDevicesVerifyTokenAPI extends RetrofitBaseAPI {
+public final class GetDevicesVerifyTokenAPI extends RetrofitBaseAPI {
 
     public static final String RELATIVE_URL = "/api/envelop";
     private String deviceInfo;

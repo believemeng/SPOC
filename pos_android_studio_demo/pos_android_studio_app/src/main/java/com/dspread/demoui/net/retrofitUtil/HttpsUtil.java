@@ -98,7 +98,7 @@ public class HttpsUtil {
     private static TrustManager[] prepareTrustManager(InputStream... certificates)
     {
         if (certificates == null || certificates.length <= 0) {
-            return null;
+            return new TrustManager[0];
         }
         try
         {
@@ -143,7 +143,7 @@ public class HttpsUtil {
         {
             e.printStackTrace();
         }
-        return null;
+        return new TrustManager[0];
 
     }
 
@@ -152,7 +152,7 @@ public class HttpsUtil {
         try
         {
             if (bksFile == null || password == null) {
-                return null;
+                return new KeyManager[0];
             }
 
             KeyStore clientKeyStore = KeyStore.getInstance("BKS");
@@ -180,7 +180,7 @@ public class HttpsUtil {
         {
             e.printStackTrace();
         }
-        return null;
+        return new KeyManager[0];
     }
 
     private static X509TrustManager chooseTrustManager(TrustManager[] trustManagers)

@@ -17,7 +17,7 @@ import org.json.JSONObject;
  * @author:Qianmeng Chen
  * Description:get the nonce
  */
-public class GetNonceAPI extends RetrofitBaseAPI {
+public final class GetNonceAPI extends RetrofitBaseAPI {
     public static final String RELATIVE_URL = "/api/getRandomNumber";
 
     public static GetNonceAPI newInstance(Context context, RetrofitCallback callback){

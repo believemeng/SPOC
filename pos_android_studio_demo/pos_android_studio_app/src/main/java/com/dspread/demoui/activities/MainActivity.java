@@ -410,6 +410,7 @@ public class MainActivity extends BaseActivity  {
             }
         });
         dialog = builder.create();
+        //  deepcode ignore HardcodedValue: <comment the reason here>
         dialog.setMessage(msg);
         dialog.setCancelable(false);
         dialog.show();

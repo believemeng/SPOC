@@ -18,7 +18,7 @@ import org.json.JSONObject;
  * @version 1.0
  * @date 2020-10-16
  */
-public class VerifyAppAPI extends RetrofitBaseAPI {
+public final class VerifyAppAPI extends RetrofitBaseAPI {
     public static final String RELATIVE_URL = "/api/verifyAppSignature";
     private String signature;
 

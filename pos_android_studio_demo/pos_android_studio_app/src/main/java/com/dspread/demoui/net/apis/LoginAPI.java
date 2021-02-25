@@ -17,7 +17,7 @@ import org.json.JSONObject;
  * Author:Qianmeng Chen
  * Description:
  */
-public class LoginAPI extends RetrofitBaseAPI {
+public final class LoginAPI extends RetrofitBaseAPI {
     public static final String RELATIVE_URL = "/api/merchant/login";
     private String userName,pwd;
 

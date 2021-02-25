@@ -16,7 +16,7 @@ import org.json.JSONObject;
 /**
  * @author Qianmeng Chen
  */
-public class VerifySCRPAPI extends RetrofitBaseAPI {
+public final class VerifySCRPAPI extends RetrofitBaseAPI {
     public static final String RELATIVE_URL = "/api/verifySCRP";
     private PosInfos posInfos;
 
