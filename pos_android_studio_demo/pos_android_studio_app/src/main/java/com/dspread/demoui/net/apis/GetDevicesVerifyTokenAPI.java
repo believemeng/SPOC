@@ -16,7 +16,7 @@ import org.json.JSONObject;
  * Author:Qianmeng Chen
  * Description:
  */
-public final class GetDevicesVerifyTokenAPI extends RetrofitBaseAPI {
+public class GetDevicesVerifyTokenAPI extends RetrofitBaseAPI {
 
     public static final String RELATIVE_URL = "/api/envelop";
     private String deviceInfo;
@@ -49,7 +49,7 @@ public final class GetDevicesVerifyTokenAPI extends RetrofitBaseAPI {
                         callback.onFailure("Active Device Fail!",code);
                     }
                 } catch (JSONException e) {
-                   // e.printStackTrace();
+                    e.printStackTrace();
                 }
             }
         });

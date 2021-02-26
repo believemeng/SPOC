@@ -22,7 +22,7 @@ import com.dspread.demoui.R;
  *        setWindowSize
  *        等等方式进行自主配置
  */
-// file deepcode ignore AvoidReassigningParameters: <comment the reason here>
+
 public class CustomPinKeyboardDialog {
     private AlertDialog mDialog;//弹框
     private Window window;//窗口

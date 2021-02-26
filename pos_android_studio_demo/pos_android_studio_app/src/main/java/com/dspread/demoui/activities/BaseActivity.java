@@ -42,7 +42,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     private TextView txt_toolbar_title;
     private ProgressDialog progressDialog;
 
-    //  deepcode ignore AvoidReassigningParameters: <comment the reason here>
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if(savedInstanceState != null) {
@@ -152,7 +151,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         progressDialog.setIndeterminate(true);
 //        progressDialog.setCancelable(false);
         progressDialog.show(); // must call show() before setContentView()
-        progressDialog.setCancelable(true);
+//        progressDialog.setCancelable(false);
 //        progressDialog.setCanceledOnTouchOutside(false);
         if (message == null) {
             progressDialog.getWindow().setBackgroundDrawableResource(R.color.transparency);

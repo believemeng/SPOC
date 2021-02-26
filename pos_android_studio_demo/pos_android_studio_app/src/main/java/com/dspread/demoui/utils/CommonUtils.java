@@ -22,8 +22,6 @@ import com.dspread.demoui.R;
 import com.dspread.demoui.net.retrofitUtil.RetrofitAuthUtil;
 import com.dspread.xpos.utils.AESUtil;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -66,7 +64,6 @@ public class CommonUtils {
 	public static String getSignature(String s) {
 		String signature = null;
 		try {
-			//  deepcode ignore InsecureHash: <comment the reason here>
 			MessageDigest md5 = MessageDigest.getInstance("MD5");
 			md5.update(s.getBytes(), 0, s.length());
 			signature = new BigInteger(1, md5.digest()).toString(16);
@@ -74,10 +71,10 @@ public class CommonUtils {
 				signature = "0" + signature;
 
 			}
-//			System.out.println("Signature: " + signature);
+			System.out.println("Signature: " + signature);
 
 		} catch (final NoSuchAlgorithmException e) {
-//			e.printStackTrace();
+			e.printStackTrace();
 		}
 
 		return signature;
@@ -97,7 +94,7 @@ public class CommonUtils {
 				Log.e(TAG, "problem hashing \"" + input + "\" " + e.getMessage(), e);
 			}
 		}
-		return new byte[0];
+		return null;
 	}
 
 	/**
@@ -119,14 +116,13 @@ public class CommonUtils {
 		}else{
 			Log.w(TAG, "hash called with null input byte[]");
 		}
-		return new byte[0];
+		return null;
 	}
 
 	public static String getSigningKeyFingerprint(Context ctx) {
 		String result = null;
 		try {
 			byte[] certEncoded = getSigningKeyCertificate(ctx);
-			//  deepcode ignore InsecureHash: <comment the reason here>
 			MessageDigest md = MessageDigest.getInstance("SHA1");
 			byte[] publicKey = md.digest(certEncoded);
 			result = byte2HexFormatted(publicKey);
@@ -163,7 +159,7 @@ public class CommonUtils {
 		} catch (Exception e) {
 			Log.w(TAG, e);
 		}
-		return new byte[0];
+		return null;
 	}
 
 	private static String byte2HexFormatted(byte[] arr) {
@@ -173,7 +169,6 @@ public class CommonUtils {
 			int l = h.length();
 			if (l == 1) h = "0" + h;
 			if (l > 2) h = h.substring(l - 2, l);
-			//  deepcode ignore NoStringConcat: <comment the reason here>
 			str.append(h.toUpperCase());
 			if (i < (arr.length - 1)) str.append(':');
 		}
@@ -184,7 +179,6 @@ public class CommonUtils {
 	public static  String convertHexToString(String hex){
 
 		StringBuilder sb = new StringBuilder();
-		//  deepcode ignore MissingAPI: <comment the reason here>
 		StringBuilder temp = new StringBuilder();
 
 		//49204c6f7665204a617661 split into two characters 49, 20, 4c...
@@ -210,7 +204,7 @@ public class CommonUtils {
 		try {
 			packageInfo = pm.getPackageInfo(packageName, PackageManager.GET_SIGNATURES);
 		} catch (PackageManager.NameNotFoundException e) {
-			//e.printStackTrace();
+			e.printStackTrace();
 			return encodedSignatures;
 		}
 		Signature[] signatures = packageInfo.signatures;
@@ -223,7 +217,7 @@ public class CommonUtils {
 				byte[] digest = md.digest();
 				encodedSignatures.add(Base64.encodeToString(digest, Base64.NO_WRAP));
 			} catch (NoSuchAlgorithmException e) {
-				//e.printStackTrace();
+				e.printStackTrace();
 			}
 		}
 		return encodedSignatures;
@@ -247,7 +241,7 @@ public class CommonUtils {
 			while (cis.read(buff) >= 0) ;
 			chksum = chk.getValue();
 		} catch (Exception e) {
-			//e.printStackTrace();
+			e.printStackTrace();
 		}
 		return chksum;
 	}
@@ -257,10 +251,10 @@ public class CommonUtils {
 		String apkPath = context.getPackageCodePath();
 		try {
 			return getDigest(new FileInputStream(apkPath), SHA_256);
-		} catch (@NotNull Throwable throwable) {
-//			throwable.printStackTrace();
+		} catch (Throwable throwable) {
+			throwable.printStackTrace();
 		}
-		return new byte[0];
+		return null;
 	}
 
 	public static final int BUFFER_SIZE = 2048;
@@ -344,7 +338,7 @@ public class CommonUtils {
 	 * @param hexString
 	 * @return
 	 */
-	public static byte[] HexStringToByteArray(String hexString) {
+	public static byte[] HexStringToByteArray(String hexString) {//
 		if (hexString == null || hexString.equals("")) {
 			return new byte[]{};
 		}

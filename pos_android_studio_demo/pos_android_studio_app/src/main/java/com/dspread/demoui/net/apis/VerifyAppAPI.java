@@ -18,7 +18,7 @@ import org.json.JSONObject;
  * @version 1.0
  * @date 2020-10-16
  */
-public final class VerifyAppAPI extends RetrofitBaseAPI {
+public class VerifyAppAPI extends RetrofitBaseAPI {
     public static final String RELATIVE_URL = "/api/verifyAppSignature";
     private String signature;
 
@@ -39,7 +39,7 @@ public final class VerifyAppAPI extends RetrofitBaseAPI {
             jsonObject.put("appSignature",signature);
             requestUtil.putParamsObj(jsonObject);
         } catch (JSONException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
         return requestUtil;
     }
@@ -56,7 +56,7 @@ public final class VerifyAppAPI extends RetrofitBaseAPI {
                         callback.onSuccess(false);
                     }
                 } catch (JSONException e) {
-                    //e.printStackTrace();
+                    e.printStackTrace();
                 }
             }
         });

@@ -17,7 +17,7 @@ import java.io.UnsupportedEncodingException;
 
 import okhttp3.ResponseBody;
 
-public final class GetAESTableAPI extends RetrofitBaseAPI {
+public class GetAESTableAPI extends RetrofitBaseAPI {
 
     public static final String RELATIVE_URL = "/api/generateAESTable";
 
@@ -48,7 +48,7 @@ public final class GetAESTableAPI extends RetrofitBaseAPI {
                 try {
                     callback.onSuccess(response.bytes());
                 } catch (IOException e) {
-                    //e.printStackTrace();
+                    e.printStackTrace();
                 }
             }
         });

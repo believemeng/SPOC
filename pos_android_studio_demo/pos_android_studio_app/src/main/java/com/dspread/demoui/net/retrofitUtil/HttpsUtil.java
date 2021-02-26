@@ -1,7 +1,5 @@
 package com.dspread.demoui.net.retrofitUtil;
 
-import android.text.TextUtils;
-
 import com.dspread.demoui.utils.TRACE;
 
 import java.io.IOException;
@@ -30,7 +28,6 @@ import javax.net.ssl.X509TrustManager;
  * Time:2020/8/24
  * Author:Qianmeng Chen
  * Description:
- *  file deepcode ignore TooPermissiveTrustManager:
  */
 public class HttpsUtil {
     public static class SSLParams
@@ -46,7 +43,6 @@ public class HttpsUtil {
         {
             TrustManager[] trustManagers = prepareTrustManager(certificates);
             KeyManager[] keyManagers = prepareKeyManager(bksFile, password);
-            //  deepcode ignore TLS: <comment the reason here>
             SSLContext sslContext = SSLContext.getInstance("TLS");
             X509TrustManager trustManager = null;
             if (trustManagers != null)
@@ -75,6 +71,15 @@ public class HttpsUtil {
         }
     }
 
+    public static class  UnSafeHostnameVerifier implements HostnameVerifier
+    {
+        @Override
+        public boolean verify(String hostname, SSLSession session)
+        {
+            return true;
+        }
+    }
+
     public static class UnSafeTrustManager implements X509TrustManager
     {
         @Override
@@ -99,7 +104,7 @@ public class HttpsUtil {
     private static TrustManager[] prepareTrustManager(InputStream... certificates)
     {
         if (certificates == null || certificates.length <= 0) {
-            return new TrustManager[0];
+            return null;
         }
         try
         {
@@ -133,18 +138,18 @@ public class HttpsUtil {
             return trustManagers;
         } catch (NoSuchAlgorithmException e)
         {
-            //e.printStackTrace();
+            e.printStackTrace();
         } catch (CertificateException e)
         {
-           // e.printStackTrace();
+            e.printStackTrace();
         } catch (KeyStoreException e)
         {
-           // e.printStackTrace();
+            e.printStackTrace();
         } catch (Exception e)
         {
-           // e.printStackTrace();
+            e.printStackTrace();
         }
-        return new TrustManager[0];
+        return null;
 
     }
 
@@ -153,7 +158,7 @@ public class HttpsUtil {
         try
         {
             if (bksFile == null || password == null) {
-                return new KeyManager[0];
+                return null;
             }
 
             KeyStore clientKeyStore = KeyStore.getInstance("BKS");
@@ -164,24 +169,24 @@ public class HttpsUtil {
 
         } catch (KeyStoreException e)
         {
-           // e.printStackTrace();
+            e.printStackTrace();
         } catch (NoSuchAlgorithmException e)
         {
-            //e.printStackTrace();
+            e.printStackTrace();
         } catch (UnrecoverableKeyException e)
         {
-            //e.printStackTrace();
+            e.printStackTrace();
         } catch (CertificateException e)
         {
-            //e.printStackTrace();
+            e.printStackTrace();
         } catch (IOException e)
         {
-            //e.printStackTrace();
+            e.printStackTrace();
         } catch (Exception e)
         {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
-        return new KeyManager[0];
+        return null;
     }
 
     private static X509TrustManager chooseTrustManager(TrustManager[] trustManagers)
