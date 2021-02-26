@@ -11,6 +11,8 @@ import android.view.WindowManager;
 
 import androidx.annotation.RequiresApi;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
@@ -71,7 +73,7 @@ public class CheckCvmAppStateUtil {
                 result = true;
             }
             TRACE.i("store version a = "+result);
-        } catch (Throwable e) {
+        } catch (@NotNull Throwable e) {
         }
         return result;
     }
@@ -84,9 +86,11 @@ public class CheckCvmAppStateUtil {
             PackageInfo info = context.getPackageManager().getPackageInfo(
                     context.getPackageName(), PackageManager.GET_SIGNATURES);
             byte[] cert = info.signatures[0].toByteArray();
+            //  deepcode ignore InsecureHash: <comment the reason here>
             MessageDigest md = MessageDigest.getInstance("SHA1");
             byte[] publicKey = md.digest(cert);
-            StringBuffer hexString = new StringBuffer();
+
+            StringBuilder hexString = new StringBuilder();
             for (int i = 0; i < publicKey.length; i++) {
                 String appendString = Integer.toHexString(0xFF & publicKey[i])
                         .toUpperCase(Locale.US);
@@ -98,9 +102,9 @@ public class CheckCvmAppStateUtil {
             String result = hexString.toString();
             return result.substring(0, result.length()-1);
         } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return null;
     }

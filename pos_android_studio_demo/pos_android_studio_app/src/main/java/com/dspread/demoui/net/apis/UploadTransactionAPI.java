@@ -16,7 +16,7 @@ import org.json.JSONObject;
 /**
  * @author Qianmeng Chen
  */
-public class UploadTransactionAPI extends RetrofitBaseAPI {
+public final class UploadTransactionAPI extends RetrofitBaseAPI {
     public static final String RELATIVE_URL = "api/transaction";
     private Transactions transactions;
 
@@ -39,7 +39,7 @@ public class UploadTransactionAPI extends RetrofitBaseAPI {
             params.put("tranTime",transactions.getTranTime());
             requestUtil.putParamsObj(params);
         } catch (JSONException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
 
         return requestUtil;

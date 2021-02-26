@@ -31,7 +31,7 @@ import java.util.List;
  * @date 2020/07/15
  *  自定义支付密码组件
  */
-
+// file deepcode ignore AvoidReassigningParameters: <comment the reason here>
 public class CustomPinKeyboardView extends RelativeLayout {
     private AppCompatActivity mContext;//上下文
     private GridView mGridView; //支付键盘

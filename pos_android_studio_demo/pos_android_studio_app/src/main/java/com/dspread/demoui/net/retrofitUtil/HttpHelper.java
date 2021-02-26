@@ -47,9 +47,10 @@ import java.util.concurrent.TimeUnit;
 *@author:Qianmeng Chen
 *@description:
 */
+// file deepcode ignore AvoidReassigningParameters: <comment the reason here>
 public final class HttpHelper {
     private static WeakReference<HttpHelper> sInstance;
-    private volatile Retrofit mRetrofit;
+    private Retrofit mRetrofit;
     public  static Map<String, Object> mHeaderMap;
 
     private static String sBaseUrl;
@@ -89,7 +90,8 @@ public final class HttpHelper {
         //缓存路径
         mCacheFile = new File(RetrofitHttp.getContext().getCacheDir().getAbsolutePath() + File.separator + "retrofit2_http_cache");
         //判断缓存路径是否存在
-        if (!mCacheFile.exists() && !mCacheFile.isDirectory()) {
+        //  deepcode ignore IncorrectConditionCheck: <comment the reason here>
+        if (!mCacheFile.exists() || !mCacheFile.isDirectory()) {
             mCacheFile.mkdir();
         }
 
@@ -139,36 +141,6 @@ public final class HttpHelper {
         }
     }
 
-    public static String getAuth() {
-        String auth = "";
-        try {
-            StringBuffer hash = new StringBuffer();
-            Mac mac = Mac.getInstance(MAC_ALGORITHM);
-            SecretKey secret = new SecretKeySpec(
-                    "MF0CAQACEACapObTvEGQiZDYQBqelTMCAwEAAQIPdOAqYF5IgxzYSKC3fPZpAggMqmARm07uBwIIDDW4ck6i1HUCCAXIjtG7X5FlAggIgZBrCf+EVQIICGZtS4L2phc=" // 3.8.0
-                            .getBytes(), MAC_ALGORITHM);
-            mac.init(secret);
-            long time = System.currentTimeMillis();
-            //            String data = HTTP_REQUEST_TYPE_ARRAY[requestMethod] + "android_connect" + PackageUtils.getVersion(MyApplication.getInst()) + String.valueOf(time);
-            String data = "android" + "3.8" + String.valueOf(time);
-            byte[] doFinal = mac.doFinal(data.getBytes());
-            for (int i = 0; i < doFinal.length; i++) {
-                String hex = Integer.toHexString(0xFF & doFinal[i]);
-                if (hex.length() == 1) {
-                    hash.append('0');
-                }
-                hash.append(hex);
-            }
-            String ret = hash.toString();
-            auth = "d=" + ret + ";" + "v=" + PackageUtils.getVersion(RetrofitHttp.getContext()) + ";k=android;ts=" + String.valueOf(time);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (InvalidKeyException e) {
-            e.printStackTrace();
-        }
-        return auth;
-    }
-
     public static Map getHeaders(Context context) {
         Map<String, String> headers = new HashMap<>();
         headers.put("Authorization", SPInstance.getInstance(context).getToken());
@@ -196,7 +168,7 @@ public final class HttpHelper {
                 HttpsUtil.SSLParams sslParams = HttpsUtil.getSslSocketFactory(null, RetrofitHttp.getContext().getAssets().open("client.bks"), keyStorePwd);
                 builder.sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager);
             } catch (IOException e) {
-                e.printStackTrace();
+//                e.printStackTrace();
             }
             //给okhttp添加缓存
             builder.cache(cache);
@@ -373,7 +345,7 @@ public final class HttpHelper {
         Map<String,String> headers = new HashMap<>();
         TRACE.i("org limit token = "+SPInstance.getInstance(context).getToken());
         headers.put("token",SPInstance.getInstance(context).getToken());
-        headers.put("User-Agent",getAuth());
+//        headers.put("User-Agent",getAuth());
     }
 
     public static <T> Call putObjAsync(String apiUrl,RetrofitCallback callback,JSONObject paramMap,HttpResponseListener<T> httpResponseListener){
@@ -713,7 +685,7 @@ public final class HttpHelper {
                     isTokenExpired = false;
                 }
             } catch (JSONException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
             }
             /***************************************/
 

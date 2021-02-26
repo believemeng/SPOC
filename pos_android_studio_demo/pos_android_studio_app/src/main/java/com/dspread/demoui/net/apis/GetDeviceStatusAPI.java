@@ -12,7 +12,7 @@ import com.dspread.demoui.net.retrofitUtil.RequestUtil;
  * Author:Qianmeng Chen
  * Description:
  */
-public class GetDeviceStatusAPI extends RetrofitBaseAPI {
+public final class GetDeviceStatusAPI extends RetrofitBaseAPI {
     public static final String RELATIVE_URL = "/api/getDeviceStatus";
     private PhoneInfos phoneInfos;
 

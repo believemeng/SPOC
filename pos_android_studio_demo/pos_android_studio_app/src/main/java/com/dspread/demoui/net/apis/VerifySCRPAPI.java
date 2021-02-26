@@ -16,7 +16,7 @@ import org.json.JSONObject;
 /**
  * @author Qianmeng Chen
  */
-public class VerifySCRPAPI extends RetrofitBaseAPI {
+public final class VerifySCRPAPI extends RetrofitBaseAPI {
     public static final String RELATIVE_URL = "/api/verifySCRP";
     private PosInfos posInfos;
 
@@ -37,11 +37,11 @@ public class VerifySCRPAPI extends RetrofitBaseAPI {
             params.put("bootLoaderVersion",posInfos.getBootLoaderVersion());
             params.put("firmwareVersion",posInfos.getFirmwareVersion());
             params.put("hardwareVersion",posInfos.getHardwareVersion());
-            params.put("PCIFirmwareVresion",posInfos.getPCIFirmwareVresion());
-            params.put("PCIHardwareVersion",posInfos.getPCIHardwareVersion());
+            params.put("PCIFirmwareVresion",posInfos.getPciFirmwareVresion());
+            params.put("PCIHardwareVersion",posInfos.getPciHardwareVersion());
             requestUtil.putParamsObj(params);
         } catch (JSONException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return requestUtil;
     }

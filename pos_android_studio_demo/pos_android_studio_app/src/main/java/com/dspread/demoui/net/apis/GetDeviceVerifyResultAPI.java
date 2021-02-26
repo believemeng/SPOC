@@ -16,7 +16,7 @@ import org.json.JSONObject;
  * Author:Qianmeng Chen
  * Description:
  */
-public class GetDeviceVerifyResultAPI extends RetrofitBaseAPI {
+public final class GetDeviceVerifyResultAPI extends RetrofitBaseAPI {
     public static final String RELATIVE_URL = "/api/getDeviceStatus";
     private String nonce,jws;
 
@@ -38,7 +38,7 @@ public class GetDeviceVerifyResultAPI extends RetrofitBaseAPI {
             params.put("jws",jws);
             requestUtil.putParamsObj(params);
         } catch (JSONException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return requestUtil;
     }

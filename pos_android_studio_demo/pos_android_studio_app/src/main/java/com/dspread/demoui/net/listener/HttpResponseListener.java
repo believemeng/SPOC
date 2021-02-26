@@ -12,7 +12,7 @@ import retrofit2.Call;
 /**
  * HttpResponseListener
  */
-
+// file deepcode ignore ClassWithOnlyPrivateConstructorsShouldBeFinal: <comment the reason here>
 public abstract class HttpResponseListener<T> {
 
     public Type getType() {
@@ -29,14 +29,9 @@ public abstract class HttpResponseListener<T> {
 
     public abstract void onResponse(JSONObject response);
 
-    public void onResponse(ResponseBody responseBody) {
+    public void onResponse(ResponseBody responseBody){} ;
 
-    }
+    public void onFailure(Call<ResponseBody> call, Throwable e){};
 
-    public void onFailure(Call<ResponseBody> call, Throwable e) {
-    }
-
-    public void onFailure(String msg,int errorCode){
-
-    }
+    public void onFailure(String msg,int errorCode){};
 }

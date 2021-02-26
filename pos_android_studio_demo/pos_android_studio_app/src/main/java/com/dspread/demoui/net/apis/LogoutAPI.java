@@ -11,7 +11,7 @@ import com.dspread.demoui.utils.TRACE;
 
 import org.json.JSONObject;
 
-public class LogoutAPI extends RetrofitBaseAPI {
+public final class LogoutAPI extends RetrofitBaseAPI {
     public static final String RELATIVE_URL = "/api/merchant/logout";
     private String userName,pwd;
 

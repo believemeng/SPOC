@@ -36,7 +36,7 @@ public class PackageUtils {
                     appContext.getPackageName(), 0);
             version = packageInfo.versionCode;
         } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
+           // e.printStackTrace();
         }
         return version;
     }
@@ -49,7 +49,7 @@ public class PackageUtils {
                     appContext.getPackageName(), 0);
             packageName = packageInfo.packageName;
         } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return packageName;
     }

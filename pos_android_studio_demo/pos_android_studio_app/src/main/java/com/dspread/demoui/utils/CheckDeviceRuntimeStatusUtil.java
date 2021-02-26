@@ -72,7 +72,7 @@ public class CheckDeviceRuntimeStatusUtil {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return false;
     }
@@ -90,7 +90,7 @@ public class CheckDeviceRuntimeStatusUtil {
             process.getInputStream().close();
             process.destroy();
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return ret;
     }
