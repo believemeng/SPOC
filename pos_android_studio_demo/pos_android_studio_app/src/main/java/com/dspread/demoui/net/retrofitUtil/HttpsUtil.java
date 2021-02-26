@@ -46,6 +46,7 @@ public class HttpsUtil {
         {
             TrustManager[] trustManagers = prepareTrustManager(certificates);
             KeyManager[] keyManagers = prepareKeyManager(bksFile, password);
+            //  deepcode ignore TLS: <comment the reason here>
             SSLContext sslContext = SSLContext.getInstance("TLS");
             X509TrustManager trustManager = null;
             if (trustManagers != null)
