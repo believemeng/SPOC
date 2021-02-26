@@ -100,7 +100,7 @@ public class ClearDataUtils {
                 }
             }
         } catch (Exception e) {
-//            e.printStackTrace();
+            e.printStackTrace();
         }
         return size;
     }

@@ -31,7 +31,7 @@ public class CustomLayoutManager extends LinearLayoutManager {
         try {
             super.onLayoutChildren(recycler, state);
         }catch (IndexOutOfBoundsException e){
-            //e.printStackTrace();
+            e.printStackTrace();
         }
     }
 }

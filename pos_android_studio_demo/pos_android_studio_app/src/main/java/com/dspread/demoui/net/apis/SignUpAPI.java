@@ -17,7 +17,7 @@ import org.json.JSONObject;
  * Author:Qianmeng Chen
  * Description:
  */
-public final class SignUpAPI extends RetrofitBaseAPI {
+public class SignUpAPI extends RetrofitBaseAPI {
     public static final String RELATIVE_URL = "/api/merchant/regist";
     private Users users;
 
@@ -40,7 +40,7 @@ public final class SignUpAPI extends RetrofitBaseAPI {
             params.put("phone",users.getPhone());
             requestUtil.putParamsObj(params);
         } catch (JSONException e) {
-           // e.printStackTrace();
+            e.printStackTrace();
         }
         return requestUtil;
     }
@@ -59,7 +59,7 @@ public final class SignUpAPI extends RetrofitBaseAPI {
                         callback.onFailure(msg,code);
                     }
                 } catch (JSONException e) {
-                   // e.printStackTrace();
+                    e.printStackTrace();
                 }
 
             }
